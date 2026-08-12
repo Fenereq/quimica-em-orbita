@@ -1,0 +1,4 @@
+/* Keeps modal dialogs out of the layout until the game explicitly opens one. */
+.modal[hidden] {
+  display: none;
+}
