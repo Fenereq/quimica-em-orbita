@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Química em Órbita</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="fixes.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <div><p class="eyebrow">LABORATÓRIO MICROSCÓPICO</p><h1>Química em Órbita</h1></div>
+      <button class="icon-button" id="rulesButton" aria-label="Abrir regras">?</button>
+    </header>
+    <section id="setup" class="panel setup">
+      <div><p class="eyebrow">MISSÃO</p><h2>Atravesse o átomo antes dos outros cientistas.</h2><p>Responda às perguntas, sobreviva aos eventos e alcance a casa 50.</p></div>
+      <label>Quantidade de jogadores <select id="playerCount"><option value="1">1 jogador</option><option value="2" selected>2 jogadores</option><option value="3">3 jogadores</option><option value="4">4 jogadores</option></select></label>
+      <button id="startButton" class="primary">Iniciar experimento</button>
+      <button id="continueButton" class="secondary" hidden>Continuar partida salva</button>
+    </section>
+    <section id="game" hidden>
+      <div class="hud">
+        <div class="turn-card"><span>VEZ DE</span><strong id="turnName">—</strong><small id="turnScore">0 pontos</small></div>
+        <div id="narrator" class="narrator">Preparem os óculos de proteção. Isso provavelmente vai dar errado.</div>
+        <div class="dice-card"><div id="die" class="die">?</div><button id="rollButton" class="primary">Lançar dado</button></div>
+      </div>
+      <section class="board-wrap" aria-label="Tabuleiro de química"><div id="board" class="board"><div class="atom"><i></i><i></i><i></i><b>ÁTOMO<br>GIGANTE</b></div></div></section>
+      <section class="legend panel"><span><i class="swatch question"></i>Pergunta</span><span><i class="swatch reroll"></i>Jogue de novo</span><span><i class="swatch pipette"></i>Pipeta</span><span><i class="swatch portal"></i>Teleporte</span><span><i class="swatch event"></i>Evento</span></section>
+      <section id="scoreboard" class="scoreboard"></section>
+    </section>
+  </main>
+  <div id="modal" class="modal" hidden><div class="modal-card" role="dialog" aria-modal="true"><button class="close" id="closeModal" aria-label="Fechar">×</button><p id="modalTag" class="eyebrow"></p><h2 id="modalTitle"></h2><p id="modalText"></p><div id="answers" class="answers"></div><button id="modalContinue" class="primary" hidden>Continuar</button></div></div>
+  <script src="game.js"></script>
+  <script src="fixes.js"></script>
+</body>
+</html>
